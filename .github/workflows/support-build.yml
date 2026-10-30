@@ -89,7 +89,8 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p out
-
+          find raw -maxdepth 3 | sort
+          
           for arch in x86_64 aarch64; do
             src="raw/windows/rustdesk-unsigned-windows-${arch}"
             if [ -d "${src}/rustdesk" ]; then src="${src}/rustdesk"; fi
